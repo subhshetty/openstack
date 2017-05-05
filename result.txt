@@ -1,0 +1,3187 @@
+Using /etc/ansible/ansible.cfg as config file
+Loading callback plugin default of type stdout, v2.0 from /usr/lib/python2.7/dist-packages/ansible/plugins/callback/__init__.pyc
+
+PLAYBOOK: port1.yaml ***********************************************************
+1 plays in playbooks/port1.yaml
+
+PLAY [192.168.10.238] **********************************************************
+
+TASK [Gathering Facts] *********************************************************
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/system/setup.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445 `" && echo ansible-tmp-1494007919.56-239539480985445="` echo /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmpjFhrcS TO /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445/setup.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445/ /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445/setup.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445/setup.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007919.56-239539480985445/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238]
+META: ran handlers
+
+TASK [Gather facts about previously created networks] **************************
+task path: /etc/ansible/playbooks/port1.yaml:6
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/cloud/openstack/os_networks_facts.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573 `" && echo ansible-tmp-1494007920.05-123979021113573="` echo /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmpJOlS9L TO /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573/os_networks_facts.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573/ /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573/os_networks_facts.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573/os_networks_facts.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007920.05-123979021113573/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238] => {
+    "ansible_facts": {
+        "openstack_networks": [
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "created_at": "2017-01-03T18:26:10", 
+                "description": "", 
+                "id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+                "ipv4_address_scope": null, 
+                "ipv6_address_scope": null, 
+                "mtu": 1450, 
+                "name": "monitor-net", 
+                "provider:network_type": "vxlan", 
+                "provider:physical_network": null, 
+                "provider:segmentation_id": 22, 
+                "router:external": false, 
+                "shared": false, 
+                "status": "ACTIVE", 
+                "subnets": [
+                    "c0b70caa-ba6c-47ab-9a26-5ca975682842"
+                ], 
+                "tags": [], 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-01-03T18:26:10"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "created_at": "2016-12-27T21:36:15", 
+                "description": "", 
+                "id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "ipv4_address_scope": null, 
+                "ipv6_address_scope": null, 
+                "is_default": false, 
+                "mtu": 1450, 
+                "name": "public-net", 
+                "provider:network_type": "vxlan", 
+                "provider:physical_network": null, 
+                "provider:segmentation_id": 66, 
+                "router:external": true, 
+                "shared": false, 
+                "status": "ACTIVE", 
+                "subnets": [
+                    "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                ], 
+                "tags": [], 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2016-12-27T21:36:49"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "created_at": "2016-12-27T21:42:11", 
+                "description": "", 
+                "id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "ipv4_address_scope": null, 
+                "ipv6_address_scope": null, 
+                "mtu": 1450, 
+                "name": "private-net", 
+                "provider:network_type": "vxlan", 
+                "provider:physical_network": null, 
+                "provider:segmentation_id": 19, 
+                "router:external": false, 
+                "shared": false, 
+                "status": "ACTIVE", 
+                "subnets": [
+                    "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                ], 
+                "tags": [], 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2016-12-27T21:42:11"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "created_at": "2016-12-28T17:40:04", 
+                "description": "", 
+                "id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "ipv4_address_scope": null, 
+                "ipv6_address_scope": null, 
+                "mtu": 1450, 
+                "name": "ceph-net", 
+                "provider:network_type": "vxlan", 
+                "provider:physical_network": null, 
+                "provider:segmentation_id": 12, 
+                "router:external": false, 
+                "shared": false, 
+                "status": "ACTIVE", 
+                "subnets": [
+                    "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                ], 
+                "tags": [], 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2016-12-28T17:40:04"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "created_at": "2017-02-01T16:59:46", 
+                "description": "", 
+                "id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "ipv4_address_scope": null, 
+                "ipv6_address_scope": null, 
+                "mtu": 1450, 
+                "name": "test", 
+                "provider:network_type": "vxlan", 
+                "provider:physical_network": null, 
+                "provider:segmentation_id": 79, 
+                "router:external": false, 
+                "shared": false, 
+                "status": "ACTIVE", 
+                "subnets": [
+                    "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                ], 
+                "tags": [], 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-02-01T16:59:46"
+            }
+        ]
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_timeout": null, 
+            "auth": {
+                "auth_url": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "project_name": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "auth_type": null, 
+            "availability_zone": null, 
+            "cacert": null, 
+            "cert": null, 
+            "cloud": null, 
+            "endpoint_type": "public", 
+            "filters": null, 
+            "key": null, 
+            "name": null, 
+            "region_name": null, 
+            "timeout": 180, 
+            "verify": null, 
+            "wait": true
+        }
+    }
+}
+
+TASK [Show openstack networks] *************************************************
+task path: /etc/ansible/playbooks/port1.yaml:13
+ok: [192.168.10.238] => {
+    "changed": false, 
+    "openstack_networks": [
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "created_at": "2017-01-03T18:26:10", 
+            "description": "", 
+            "id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+            "ipv4_address_scope": null, 
+            "ipv6_address_scope": null, 
+            "mtu": 1450, 
+            "name": "monitor-net", 
+            "provider:network_type": "vxlan", 
+            "provider:physical_network": null, 
+            "provider:segmentation_id": 22, 
+            "router:external": false, 
+            "shared": false, 
+            "status": "ACTIVE", 
+            "subnets": [
+                "c0b70caa-ba6c-47ab-9a26-5ca975682842"
+            ], 
+            "tags": [], 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-01-03T18:26:10"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "created_at": "2016-12-27T21:36:15", 
+            "description": "", 
+            "id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "ipv4_address_scope": null, 
+            "ipv6_address_scope": null, 
+            "is_default": false, 
+            "mtu": 1450, 
+            "name": "public-net", 
+            "provider:network_type": "vxlan", 
+            "provider:physical_network": null, 
+            "provider:segmentation_id": 66, 
+            "router:external": true, 
+            "shared": false, 
+            "status": "ACTIVE", 
+            "subnets": [
+                "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+            ], 
+            "tags": [], 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2016-12-27T21:36:49"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "created_at": "2016-12-27T21:42:11", 
+            "description": "", 
+            "id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "ipv4_address_scope": null, 
+            "ipv6_address_scope": null, 
+            "mtu": 1450, 
+            "name": "private-net", 
+            "provider:network_type": "vxlan", 
+            "provider:physical_network": null, 
+            "provider:segmentation_id": 19, 
+            "router:external": false, 
+            "shared": false, 
+            "status": "ACTIVE", 
+            "subnets": [
+                "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+            ], 
+            "tags": [], 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2016-12-27T21:42:11"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "created_at": "2016-12-28T17:40:04", 
+            "description": "", 
+            "id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "ipv4_address_scope": null, 
+            "ipv6_address_scope": null, 
+            "mtu": 1450, 
+            "name": "ceph-net", 
+            "provider:network_type": "vxlan", 
+            "provider:physical_network": null, 
+            "provider:segmentation_id": 12, 
+            "router:external": false, 
+            "shared": false, 
+            "status": "ACTIVE", 
+            "subnets": [
+                "0419a51b-9df5-4f36-9467-e06b96e04d50"
+            ], 
+            "tags": [], 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2016-12-28T17:40:04"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "created_at": "2017-02-01T16:59:46", 
+            "description": "", 
+            "id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "ipv4_address_scope": null, 
+            "ipv6_address_scope": null, 
+            "mtu": 1450, 
+            "name": "test", 
+            "provider:network_type": "vxlan", 
+            "provider:physical_network": null, 
+            "provider:segmentation_id": 79, 
+            "router:external": false, 
+            "shared": false, 
+            "status": "ACTIVE", 
+            "subnets": [
+                "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+            ], 
+            "tags": [], 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-02-01T16:59:46"
+        }
+    ]
+}
+
+TASK [Gather facts about previously created subnets] ***************************
+task path: /etc/ansible/playbooks/port1.yaml:16
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/cloud/openstack/os_subnets_facts.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814 `" && echo ansible-tmp-1494007921.34-42722120281814="` echo /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmpKKA_Zr TO /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814/os_subnets_facts.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814/ /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814/os_subnets_facts.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814/os_subnets_facts.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007921.34-42722120281814/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238] => {
+    "ansible_facts": {
+        "openstack_subnets": [
+            {
+                "allocation_pools": [
+                    {
+                        "end": "172.0.0.254", 
+                        "start": "172.0.0.2"
+                    }
+                ], 
+                "cidr": "172.0.0.0/24", 
+                "created_at": "2017-01-03T18:26:10", 
+                "description": "", 
+                "dns_nameservers": [], 
+                "enable_dhcp": true, 
+                "gateway_ip": "172.0.0.1", 
+                "host_routes": [], 
+                "id": "c0b70caa-ba6c-47ab-9a26-5ca975682842", 
+                "ip_version": 4, 
+                "ipv6_address_mode": null, 
+                "ipv6_ra_mode": null, 
+                "name": "monitor-sub", 
+                "network_id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+                "subnetpool_id": null, 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-01-03T18:26:10"
+            }, 
+            {
+                "allocation_pools": [
+                    {
+                        "end": "192.168.10.200", 
+                        "start": "192.168.10.2"
+                    }
+                ], 
+                "cidr": "192.168.10.0/24", 
+                "created_at": "2016-12-27T21:36:16", 
+                "description": "", 
+                "dns_nameservers": [], 
+                "enable_dhcp": false, 
+                "gateway_ip": "192.168.10.1", 
+                "host_routes": [], 
+                "id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539", 
+                "ip_version": 4, 
+                "ipv6_address_mode": null, 
+                "ipv6_ra_mode": null, 
+                "name": "public-sub", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "subnetpool_id": null, 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2016-12-27T21:36:16"
+            }, 
+            {
+                "allocation_pools": [
+                    {
+                        "end": "10.0.0.254", 
+                        "start": "10.0.0.2"
+                    }
+                ], 
+                "cidr": "10.0.0.0/24", 
+                "created_at": "2016-12-27T21:42:11", 
+                "description": "", 
+                "dns_nameservers": [], 
+                "enable_dhcp": true, 
+                "gateway_ip": "10.0.0.1", 
+                "host_routes": [], 
+                "id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d", 
+                "ip_version": 4, 
+                "ipv6_address_mode": null, 
+                "ipv6_ra_mode": null, 
+                "name": "private-sub", 
+                "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "subnetpool_id": null, 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2016-12-27T21:42:11"
+            }, 
+            {
+                "allocation_pools": [
+                    {
+                        "end": "11.0.0.254", 
+                        "start": "11.0.0.2"
+                    }
+                ], 
+                "cidr": "11.0.0.0/24", 
+                "created_at": "2017-02-01T16:59:46", 
+                "description": "", 
+                "dns_nameservers": [
+                    "209.18.47.61", 
+                    "209.18.47.62"
+                ], 
+                "enable_dhcp": true, 
+                "gateway_ip": "11.0.0.1", 
+                "host_routes": [], 
+                "id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3", 
+                "ip_version": 4, 
+                "ipv6_address_mode": null, 
+                "ipv6_ra_mode": null, 
+                "name": "test-sub", 
+                "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "subnetpool_id": null, 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-02-01T16:59:46"
+            }, 
+            {
+                "allocation_pools": [
+                    {
+                        "end": "192.0.0.254", 
+                        "start": "192.0.0.2"
+                    }
+                ], 
+                "cidr": "192.0.0.0/24", 
+                "created_at": "2016-12-28T17:40:04", 
+                "description": "", 
+                "dns_nameservers": [
+                    "209.18.47.61", 
+                    "209.18.47.62"
+                ], 
+                "enable_dhcp": true, 
+                "gateway_ip": "192.0.0.1", 
+                "host_routes": [], 
+                "id": "0419a51b-9df5-4f36-9467-e06b96e04d50", 
+                "ip_version": 4, 
+                "ipv6_address_mode": null, 
+                "ipv6_ra_mode": null, 
+                "name": "ceph-sub", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "subnetpool_id": null, 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2016-12-28T17:40:04"
+            }
+        ]
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_timeout": null, 
+            "auth": {
+                "auth_url": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "project_name": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "auth_type": null, 
+            "availability_zone": null, 
+            "cacert": null, 
+            "cert": null, 
+            "cloud": null, 
+            "endpoint_type": "public", 
+            "filters": null, 
+            "key": null, 
+            "name": null, 
+            "region_name": null, 
+            "timeout": 180, 
+            "verify": null, 
+            "wait": true
+        }
+    }
+}
+
+TASK [Show openstack subnets] **************************************************
+task path: /etc/ansible/playbooks/port1.yaml:23
+ok: [192.168.10.238] => {
+    "changed": false, 
+    "openstack_subnets": [
+        {
+            "allocation_pools": [
+                {
+                    "end": "172.0.0.254", 
+                    "start": "172.0.0.2"
+                }
+            ], 
+            "cidr": "172.0.0.0/24", 
+            "created_at": "2017-01-03T18:26:10", 
+            "description": "", 
+            "dns_nameservers": [], 
+            "enable_dhcp": true, 
+            "gateway_ip": "172.0.0.1", 
+            "host_routes": [], 
+            "id": "c0b70caa-ba6c-47ab-9a26-5ca975682842", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "ipv6_ra_mode": null, 
+            "name": "monitor-sub", 
+            "network_id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+            "subnetpool_id": null, 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-01-03T18:26:10"
+        }, 
+        {
+            "allocation_pools": [
+                {
+                    "end": "192.168.10.200", 
+                    "start": "192.168.10.2"
+                }
+            ], 
+            "cidr": "192.168.10.0/24", 
+            "created_at": "2016-12-27T21:36:16", 
+            "description": "", 
+            "dns_nameservers": [], 
+            "enable_dhcp": false, 
+            "gateway_ip": "192.168.10.1", 
+            "host_routes": [], 
+            "id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "ipv6_ra_mode": null, 
+            "name": "public-sub", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "subnetpool_id": null, 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2016-12-27T21:36:16"
+        }, 
+        {
+            "allocation_pools": [
+                {
+                    "end": "10.0.0.254", 
+                    "start": "10.0.0.2"
+                }
+            ], 
+            "cidr": "10.0.0.0/24", 
+            "created_at": "2016-12-27T21:42:11", 
+            "description": "", 
+            "dns_nameservers": [], 
+            "enable_dhcp": true, 
+            "gateway_ip": "10.0.0.1", 
+            "host_routes": [], 
+            "id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "ipv6_ra_mode": null, 
+            "name": "private-sub", 
+            "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "subnetpool_id": null, 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2016-12-27T21:42:11"
+        }, 
+        {
+            "allocation_pools": [
+                {
+                    "end": "11.0.0.254", 
+                    "start": "11.0.0.2"
+                }
+            ], 
+            "cidr": "11.0.0.0/24", 
+            "created_at": "2017-02-01T16:59:46", 
+            "description": "", 
+            "dns_nameservers": [
+                "209.18.47.61", 
+                "209.18.47.62"
+            ], 
+            "enable_dhcp": true, 
+            "gateway_ip": "11.0.0.1", 
+            "host_routes": [], 
+            "id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "ipv6_ra_mode": null, 
+            "name": "test-sub", 
+            "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "subnetpool_id": null, 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-02-01T16:59:46"
+        }, 
+        {
+            "allocation_pools": [
+                {
+                    "end": "192.0.0.254", 
+                    "start": "192.0.0.2"
+                }
+            ], 
+            "cidr": "192.0.0.0/24", 
+            "created_at": "2016-12-28T17:40:04", 
+            "description": "", 
+            "dns_nameservers": [
+                "209.18.47.61", 
+                "209.18.47.62"
+            ], 
+            "enable_dhcp": true, 
+            "gateway_ip": "192.0.0.1", 
+            "host_routes": [], 
+            "id": "0419a51b-9df5-4f36-9467-e06b96e04d50", 
+            "ip_version": 4, 
+            "ipv6_address_mode": null, 
+            "ipv6_ra_mode": null, 
+            "name": "ceph-sub", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "subnetpool_id": null, 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2016-12-28T17:40:04"
+        }
+    ]
+}
+
+TASK [show facts about all ports] **********************************************
+task path: /etc/ansible/playbooks/port1.yaml:26
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/cloud/openstack/os_port_facts.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255 `" && echo ansible-tmp-1494007922.48-70336105070255="` echo /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmp_8ujC0 TO /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255/os_port_facts.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255/ /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255/os_port_facts.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255/os_port_facts.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007922.48-70336105070255/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238] => {
+    "ansible_facts": {
+        "openstack_ports": [
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:30:21", 
+                "description": "", 
+                "device_id": "3ebdcc13-a05e-48b2-aa32-4a72cec0c7a4", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.13", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "0b657d26-8141-44e0-a166-6507e5813ca1", 
+                "mac_address": "fa:16:3e:8a:d2:de", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-18T16:30:21"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-27T21:42:32", 
+                "description": "", 
+                "device_id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+                "device_owner": "network:router_gateway", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.2", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "316df12f-5f09-46e0-80c1-036faf0933dc", 
+                "mac_address": "fa:16:3e:7b:58:c3", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "BUILD", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-27T21:42:34"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:21:55", 
+                "description": "", 
+                "device_id": "d7914edb-82e8-4e8d-8ba3-7ec0812d8633", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.9", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "42097403-54b5-4016-928b-1b6c9d34ea7c", 
+                "mac_address": "fa:16:3e:92:a2:42", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-18T16:21:55"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T17:40:04", 
+                "description": "", 
+                "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "device_owner": "network:dhcp", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.2", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "443f3e66-efe6-4bab-bc60-c878407ae830", 
+                "mac_address": "fa:16:3e:d1:0f:cb", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T15:33:03", 
+                "description": "", 
+                "device_id": "d06dbfeb-67b6-40d9-89cc-33c40672df55", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.5", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "4443566f-b977-4da5-81bb-8c8d2da64504", 
+                "mac_address": "fa:16:3e:98:08:fa", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-28T15:33:03"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-03-28T19:43:40", 
+                "description": "", 
+                "device_id": "ed51676b-ef77-426a-b7df-79b45bdc80b2", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.69", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "48a51a1e-d27f-4409-beb5-2c11e00466d4", 
+                "mac_address": "fa:16:3e:ee:0e:85", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-22T16:24:18", 
+                "description": "", 
+                "device_id": "6a8f054e-daa7-44c8-b47a-81d3a5d5579b", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.14", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "518e5e5c-d69d-41c9-a4b3-6b2b82cf0670", 
+                "mac_address": "fa:16:3e:db:1c:c3", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-22T16:24:18"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-27T16:33:09", 
+                "description": "", 
+                "device_id": "618c4ce1-02ae-4a81-8ad2-4b20225b75fb", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.46", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "533f55e2-677c-44a0-a726-8969f0eb49c6", 
+                "mac_address": "fa:16:3e:09:00:ba", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-30T17:35:07", 
+                "description": "", 
+                "device_id": "467776de-b806-4f8b-9b26-b1b97494788d", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.16", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "54154845-aa0a-4845-9bbe-82a7308a1c64", 
+                "mac_address": "fa:16:3e:a9:b1:95", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-30T17:35:07"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-27T21:42:46", 
+                "description": "", 
+                "device_id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+                "device_owner": "network:router_interface", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "10.0.0.1", 
+                        "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                    }
+                ], 
+                "id": "560e209f-5d6e-4a7a-86b0-7412f7ee9d16", 
+                "mac_address": "fa:16:3e:25:59:ff", 
+                "name": "", 
+                "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:22:56", 
+                "description": "", 
+                "device_id": "3387ad8a-f20e-4733-b2ef-868df0395ac0", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.10", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "59a99573-2ac2-4b8d-8fc1-79e1d4317844", 
+                "mac_address": "fa:16:3e:5b:58:41", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-18T16:22:56"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:26:23", 
+                "description": "", 
+                "device_id": "46c1cd62-8b4b-40fc-8d09-4d849cdeb1eb", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.12", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "5b86cbb6-d7c3-456e-9553-c511a4dc006b", 
+                "mac_address": "fa:16:3e:13:06:3d", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-18T16:26:23"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-03T17:51:29", 
+                "description": "", 
+                "device_id": "78ddb171-d8a8-4766-87be-55b83d0d8b55", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.8", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "621aad2e-f6f8-4e18-92f9-b5f3cb85fee2", 
+                "mac_address": "fa:16:3e:3a:a9:b0", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-03T17:51:29"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T17:40:28", 
+                "description": "", 
+                "device_id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+                "device_owner": "network:router_interface", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.1", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "664a0b14-6158-406c-baff-985d29b29354", 
+                "mac_address": "fa:16:3e:3b:8d:33", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-04-20T14:07:35", 
+                "description": "", 
+                "device_id": "3bb011c0-3281-472a-b292-1822c75e461b", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.20", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "6670760d-8bf7-4a05-ae86-61c2b06d30e7", 
+                "mac_address": "fa:16:3e:97:48:f9", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-04-20T14:07:35"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:23:38", 
+                "description": "", 
+                "device_id": "64854305-0d45-48db-a30c-e86dd6137c86", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.11", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "6679dce4-37cb-44aa-bf1e-fb1536166edc", 
+                "mac_address": "fa:16:3e:e8:21:b1", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-01-18T16:23:38"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-01T17:00:04", 
+                "description": "", 
+                "device_id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+                "device_owner": "network:router_gateway", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.17", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "74dea381-39ad-45fb-bb2f-14b14c97cfb6", 
+                "mac_address": "fa:16:3e:b0:aa:50", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "BUILD", 
+                "tenant_id": "", 
+                "updated_at": "2017-02-01T17:00:05"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T15:18:56", 
+                "description": "", 
+                "device_id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+                "device_owner": "network:router_gateway", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.4", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "75b2a981-45ce-4ec9-b26e-730423e0254e", 
+                "mac_address": "fa:16:3e:dc:8a:49", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "BUILD", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-28T15:18:58"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-05-05T17:29:55", 
+                "description": "", 
+                "device_id": "96f31445-8d08-4291-aa49-a5123854d6b6", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.21", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "810f5b5e-01e3-4849-9886-84f271101d57", 
+                "mac_address": "fa:16:3e:f2:82:d8", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-05-05T17:29:55"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-04-27T17:02:40", 
+                "description": "", 
+                "device_id": "9ef4665a-2582-48b1-80fe-a39326664edf", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "11.0.0.49", 
+                        "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                    }
+                ], 
+                "id": "8920073d-23b6-43e7-ade8-9a1dbd614756", 
+                "mac_address": "fa:16:3e:c4:df:2a", 
+                "name": "", 
+                "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "security_groups": [
+                    "e9fed594-0634-443f-9df6-716994c59a0c"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-04-27T17:02:43"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-18T16:23:30", 
+                "description": "", 
+                "device_id": "dd7aacb8-5262-4a67-879e-ed22c4edab08", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.23", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "9b4f6ba9-9fad-4064-aae2-65d076f785d5", 
+                "mac_address": "fa:16:3e:9b:64:7a", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T15:40:55", 
+                "description": "", 
+                "device_id": "e8f924ad-6d6f-47af-9837-feae8637bce2", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.7", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "a0332ca3-d152-447e-8f05-597834f384b0", 
+                "mac_address": "fa:16:3e:5f:7a:d7", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-28T15:40:55"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-28T15:38:49", 
+                "description": "", 
+                "device_id": "119d7dac-8c5d-42a3-92bd-2d31776c6714", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.6", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "a7e9305d-c8b2-47d6-9a92-2b5689924cca", 
+                "mac_address": "fa:16:3e:1d:9d:28", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-28T15:38:49"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-27T21:42:11", 
+                "description": "", 
+                "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "device_owner": "network:dhcp", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "10.0.0.2", 
+                        "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                    }
+                ], 
+                "id": "b09476fe-b8bb-40ba-bd0b-6b3b24448cf5", 
+                "mac_address": "fa:16:3e:24:64:1d", 
+                "name": "", 
+                "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-05-05T16:50:02", 
+                "description": "", 
+                "device_id": "39545216-4f16-4c33-8fdd-4f70c32b3fa4", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.100", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "b2c6ed97-6d16-4482-9ac6-bde0626c084e", 
+                "mac_address": "fa:16:3e:fe:3f:67", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-05-05T16:50:05"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-04-20T16:23:29", 
+                "description": "", 
+                "device_id": "9a56cd6d-1d6f-4159-9529-5f201208c3f7", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.99", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "b7d419a7-c610-4eb4-87cd-6f9351e95a57", 
+                "mac_address": "fa:16:3e:9c:a1:d8", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-01-03T18:26:10", 
+                "description": "", 
+                "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+                "device_owner": "network:dhcp", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "172.0.0.2", 
+                        "subnet_id": "c0b70caa-ba6c-47ab-9a26-5ca975682842"
+                    }
+                ], 
+                "id": "c3cc7654-fde5-4d7a-ba8d-ec2f2f328148", 
+                "mac_address": "fa:16:3e:a9:aa:f6", 
+                "name": "", 
+                "network_id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-01T17:00:26", 
+                "description": "", 
+                "device_id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+                "device_owner": "network:router_interface", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "11.0.0.1", 
+                        "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                    }
+                ], 
+                "id": "cea4dc33-feec-479c-b4f6-d67dc7d5acd4", 
+                "mac_address": "fa:16:3e:01:22:0c", 
+                "name": "", 
+                "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-11T22:22:35", 
+                "description": "", 
+                "device_id": "77c49c4c-7f44-4d42-a97c-269dd6d14efb", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "10.0.0.17", 
+                        "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                    }
+                ], 
+                "id": "d3f1e0f1-9e0a-4369-8058-73e444a1a817", 
+                "mac_address": "fa:16:3e:44:4a:be", 
+                "name": "", 
+                "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+                "security_groups": [
+                    "ed14aa30-117a-484e-9d4f-2968161caf6a"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-03-22T16:01:06", 
+                "description": "", 
+                "device_id": "0ddc3b64-8e76-4e92-8120-ed331cb24b93", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.68", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "dab72a7e-72b5-4071-9d88-34920b39e243", 
+                "mac_address": "fa:16:3e:a7:f3:77", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-04-20T14:07:21", 
+                "description": "", 
+                "device_id": "9c5b6959-ce08-4b30-ae86-45c56b835a0c", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "11.0.0.48", 
+                        "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                    }
+                ], 
+                "id": "db26221d-2f14-4502-a991-9dbae7da2d5b", 
+                "mac_address": "fa:16:3e:95:ca:d9", 
+                "name": "", 
+                "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "security_groups": [
+                    "e9fed594-0634-443f-9df6-716994c59a0c"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-01T16:59:46", 
+                "description": "", 
+                "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "device_owner": "network:dhcp", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "11.0.0.2", 
+                        "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                    }
+                ], 
+                "id": "e545b35f-552b-4f7c-b005-f4925f961752", 
+                "mac_address": "fa:16:3e:ba:01:7c", 
+                "name": "", 
+                "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+                "security_groups": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+                "updated_at": "2017-04-24T15:37:12"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "cloud", 
+                "binding:profile": {}, 
+                "binding:vif_details": {
+                    "ovs_hybrid_plug": true, 
+                    "port_filter": true
+                }, 
+                "binding:vif_type": "ovs", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-03-02T16:45:37", 
+                "description": "", 
+                "device_id": "ea57f133-cccd-4347-91f0-8f95fe05b88e", 
+                "device_owner": "compute:nova", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.0.0.48", 
+                        "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                    }
+                ], 
+                "id": "e6a3916f-0fae-451a-8915-0e4ac7c7c821", 
+                "mac_address": "fa:16:3e:ff:37:31", 
+                "name": "", 
+                "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+                "security_groups": [
+                    "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+                ], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+                "updated_at": "2017-04-24T15:37:13"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2016-12-27T21:54:48", 
+                "description": "", 
+                "device_id": "53019ede-c898-4911-9435-b98a03ba9cb8", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.3", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "eaade98d-65fe-4214-bea9-a5acb3dc9ec5", 
+                "mac_address": "fa:16:3e:3d:1b:5f", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2016-12-27T21:54:48"
+            }, 
+            {
+                "admin_state_up": true, 
+                "allowed_address_pairs": [], 
+                "binding:host_id": "", 
+                "binding:profile": {}, 
+                "binding:vif_details": {}, 
+                "binding:vif_type": "unbound", 
+                "binding:vnic_type": "normal", 
+                "created_at": "2017-02-01T17:05:08", 
+                "description": "", 
+                "device_id": "7aacc7b4-2df5-47cc-9b04-4648090848b0", 
+                "device_owner": "network:floatingip", 
+                "extra_dhcp_opts": [], 
+                "fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.18", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "id": "f0b197ec-cc14-44f5-84ff-f199ce480244", 
+                "mac_address": "fa:16:3e:4b:42:ab", 
+                "name": "", 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+                "security_groups": [], 
+                "status": "N/A", 
+                "tenant_id": "", 
+                "updated_at": "2017-02-01T17:05:08"
+            }
+        ]
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_timeout": null, 
+            "auth": {
+                "auth_url": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "project_name": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "auth_type": null, 
+            "availability_zone": null, 
+            "cacert": null, 
+            "cert": null, 
+            "cloud": null, 
+            "endpoint_type": "public", 
+            "key": null, 
+            "region_name": null, 
+            "timeout": 180, 
+            "verify": null, 
+            "wait": true
+        }
+    }
+}
+
+TASK [show openstack ports] ****************************************************
+task path: /etc/ansible/playbooks/port1.yaml:33
+ok: [192.168.10.238] => {
+    "changed": false, 
+    "openstack_ports": [
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:30:21", 
+            "description": "", 
+            "device_id": "3ebdcc13-a05e-48b2-aa32-4a72cec0c7a4", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.13", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "0b657d26-8141-44e0-a166-6507e5813ca1", 
+            "mac_address": "fa:16:3e:8a:d2:de", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-18T16:30:21"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-27T21:42:32", 
+            "description": "", 
+            "device_id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+            "device_owner": "network:router_gateway", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.2", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "316df12f-5f09-46e0-80c1-036faf0933dc", 
+            "mac_address": "fa:16:3e:7b:58:c3", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "BUILD", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-27T21:42:34"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:21:55", 
+            "description": "", 
+            "device_id": "d7914edb-82e8-4e8d-8ba3-7ec0812d8633", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.9", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "42097403-54b5-4016-928b-1b6c9d34ea7c", 
+            "mac_address": "fa:16:3e:92:a2:42", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-18T16:21:55"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T17:40:04", 
+            "description": "", 
+            "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "device_owner": "network:dhcp", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.2", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "443f3e66-efe6-4bab-bc60-c878407ae830", 
+            "mac_address": "fa:16:3e:d1:0f:cb", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T15:33:03", 
+            "description": "", 
+            "device_id": "d06dbfeb-67b6-40d9-89cc-33c40672df55", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.5", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "4443566f-b977-4da5-81bb-8c8d2da64504", 
+            "mac_address": "fa:16:3e:98:08:fa", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-28T15:33:03"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-03-28T19:43:40", 
+            "description": "", 
+            "device_id": "ed51676b-ef77-426a-b7df-79b45bdc80b2", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.69", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "48a51a1e-d27f-4409-beb5-2c11e00466d4", 
+            "mac_address": "fa:16:3e:ee:0e:85", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-22T16:24:18", 
+            "description": "", 
+            "device_id": "6a8f054e-daa7-44c8-b47a-81d3a5d5579b", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.14", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "518e5e5c-d69d-41c9-a4b3-6b2b82cf0670", 
+            "mac_address": "fa:16:3e:db:1c:c3", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-22T16:24:18"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-27T16:33:09", 
+            "description": "", 
+            "device_id": "618c4ce1-02ae-4a81-8ad2-4b20225b75fb", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.46", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "533f55e2-677c-44a0-a726-8969f0eb49c6", 
+            "mac_address": "fa:16:3e:09:00:ba", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-30T17:35:07", 
+            "description": "", 
+            "device_id": "467776de-b806-4f8b-9b26-b1b97494788d", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.16", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "54154845-aa0a-4845-9bbe-82a7308a1c64", 
+            "mac_address": "fa:16:3e:a9:b1:95", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-30T17:35:07"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-27T21:42:46", 
+            "description": "", 
+            "device_id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+            "device_owner": "network:router_interface", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "10.0.0.1", 
+                    "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                }
+            ], 
+            "id": "560e209f-5d6e-4a7a-86b0-7412f7ee9d16", 
+            "mac_address": "fa:16:3e:25:59:ff", 
+            "name": "", 
+            "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:22:56", 
+            "description": "", 
+            "device_id": "3387ad8a-f20e-4733-b2ef-868df0395ac0", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.10", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "59a99573-2ac2-4b8d-8fc1-79e1d4317844", 
+            "mac_address": "fa:16:3e:5b:58:41", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-18T16:22:56"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:26:23", 
+            "description": "", 
+            "device_id": "46c1cd62-8b4b-40fc-8d09-4d849cdeb1eb", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.12", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "5b86cbb6-d7c3-456e-9553-c511a4dc006b", 
+            "mac_address": "fa:16:3e:13:06:3d", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-18T16:26:23"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-03T17:51:29", 
+            "description": "", 
+            "device_id": "78ddb171-d8a8-4766-87be-55b83d0d8b55", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.8", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "621aad2e-f6f8-4e18-92f9-b5f3cb85fee2", 
+            "mac_address": "fa:16:3e:3a:a9:b0", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-03T17:51:29"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T17:40:28", 
+            "description": "", 
+            "device_id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+            "device_owner": "network:router_interface", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.1", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "664a0b14-6158-406c-baff-985d29b29354", 
+            "mac_address": "fa:16:3e:3b:8d:33", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-04-20T14:07:35", 
+            "description": "", 
+            "device_id": "3bb011c0-3281-472a-b292-1822c75e461b", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.20", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "6670760d-8bf7-4a05-ae86-61c2b06d30e7", 
+            "mac_address": "fa:16:3e:97:48:f9", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-04-20T14:07:35"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:23:38", 
+            "description": "", 
+            "device_id": "64854305-0d45-48db-a30c-e86dd6137c86", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.11", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "6679dce4-37cb-44aa-bf1e-fb1536166edc", 
+            "mac_address": "fa:16:3e:e8:21:b1", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-01-18T16:23:38"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-01T17:00:04", 
+            "description": "", 
+            "device_id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+            "device_owner": "network:router_gateway", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.17", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "74dea381-39ad-45fb-bb2f-14b14c97cfb6", 
+            "mac_address": "fa:16:3e:b0:aa:50", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "BUILD", 
+            "tenant_id": "", 
+            "updated_at": "2017-02-01T17:00:05"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T15:18:56", 
+            "description": "", 
+            "device_id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+            "device_owner": "network:router_gateway", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.4", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "75b2a981-45ce-4ec9-b26e-730423e0254e", 
+            "mac_address": "fa:16:3e:dc:8a:49", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "BUILD", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-28T15:18:58"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-05-05T17:29:55", 
+            "description": "", 
+            "device_id": "96f31445-8d08-4291-aa49-a5123854d6b6", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.21", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "810f5b5e-01e3-4849-9886-84f271101d57", 
+            "mac_address": "fa:16:3e:f2:82:d8", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-05-05T17:29:55"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-04-27T17:02:40", 
+            "description": "", 
+            "device_id": "9ef4665a-2582-48b1-80fe-a39326664edf", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "11.0.0.49", 
+                    "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                }
+            ], 
+            "id": "8920073d-23b6-43e7-ade8-9a1dbd614756", 
+            "mac_address": "fa:16:3e:c4:df:2a", 
+            "name": "", 
+            "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "security_groups": [
+                "e9fed594-0634-443f-9df6-716994c59a0c"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-04-27T17:02:43"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-18T16:23:30", 
+            "description": "", 
+            "device_id": "dd7aacb8-5262-4a67-879e-ed22c4edab08", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.23", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "9b4f6ba9-9fad-4064-aae2-65d076f785d5", 
+            "mac_address": "fa:16:3e:9b:64:7a", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T15:40:55", 
+            "description": "", 
+            "device_id": "e8f924ad-6d6f-47af-9837-feae8637bce2", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.7", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "a0332ca3-d152-447e-8f05-597834f384b0", 
+            "mac_address": "fa:16:3e:5f:7a:d7", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-28T15:40:55"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-28T15:38:49", 
+            "description": "", 
+            "device_id": "119d7dac-8c5d-42a3-92bd-2d31776c6714", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.6", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "a7e9305d-c8b2-47d6-9a92-2b5689924cca", 
+            "mac_address": "fa:16:3e:1d:9d:28", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-28T15:38:49"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-27T21:42:11", 
+            "description": "", 
+            "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "device_owner": "network:dhcp", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "10.0.0.2", 
+                    "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                }
+            ], 
+            "id": "b09476fe-b8bb-40ba-bd0b-6b3b24448cf5", 
+            "mac_address": "fa:16:3e:24:64:1d", 
+            "name": "", 
+            "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-05-05T16:50:02", 
+            "description": "", 
+            "device_id": "39545216-4f16-4c33-8fdd-4f70c32b3fa4", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.100", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "b2c6ed97-6d16-4482-9ac6-bde0626c084e", 
+            "mac_address": "fa:16:3e:fe:3f:67", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-05-05T16:50:05"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-04-20T16:23:29", 
+            "description": "", 
+            "device_id": "9a56cd6d-1d6f-4159-9529-5f201208c3f7", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.99", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "b7d419a7-c610-4eb4-87cd-6f9351e95a57", 
+            "mac_address": "fa:16:3e:9c:a1:d8", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-01-03T18:26:10", 
+            "description": "", 
+            "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+            "device_owner": "network:dhcp", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "172.0.0.2", 
+                    "subnet_id": "c0b70caa-ba6c-47ab-9a26-5ca975682842"
+                }
+            ], 
+            "id": "c3cc7654-fde5-4d7a-ba8d-ec2f2f328148", 
+            "mac_address": "fa:16:3e:a9:aa:f6", 
+            "name": "", 
+            "network_id": "cae2a0af-92c2-4c70-b372-f3a6f97e75d0", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-01T17:00:26", 
+            "description": "", 
+            "device_id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+            "device_owner": "network:router_interface", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "11.0.0.1", 
+                    "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                }
+            ], 
+            "id": "cea4dc33-feec-479c-b4f6-d67dc7d5acd4", 
+            "mac_address": "fa:16:3e:01:22:0c", 
+            "name": "", 
+            "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-11T22:22:35", 
+            "description": "", 
+            "device_id": "77c49c4c-7f44-4d42-a97c-269dd6d14efb", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "10.0.0.17", 
+                    "subnet_id": "5504fb6c-8dcc-4396-83f2-3231e069bb8d"
+                }
+            ], 
+            "id": "d3f1e0f1-9e0a-4369-8058-73e444a1a817", 
+            "mac_address": "fa:16:3e:44:4a:be", 
+            "name": "", 
+            "network_id": "1651da28-72d8-4d81-923e-cb406fb68d4c", 
+            "security_groups": [
+                "ed14aa30-117a-484e-9d4f-2968161caf6a"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-03-22T16:01:06", 
+            "description": "", 
+            "device_id": "0ddc3b64-8e76-4e92-8120-ed331cb24b93", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.68", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "dab72a7e-72b5-4071-9d88-34920b39e243", 
+            "mac_address": "fa:16:3e:a7:f3:77", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-04-20T14:07:21", 
+            "description": "", 
+            "device_id": "9c5b6959-ce08-4b30-ae86-45c56b835a0c", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "11.0.0.48", 
+                    "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                }
+            ], 
+            "id": "db26221d-2f14-4502-a991-9dbae7da2d5b", 
+            "mac_address": "fa:16:3e:95:ca:d9", 
+            "name": "", 
+            "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "security_groups": [
+                "e9fed594-0634-443f-9df6-716994c59a0c"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-01T16:59:46", 
+            "description": "", 
+            "device_id": "dhcp6c58ea5d-b987-5b82-8ec3-7e8435951a6d-9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "device_owner": "network:dhcp", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "11.0.0.2", 
+                    "subnet_id": "67db4ce7-8e65-4cb1-aae7-6309c5be9ea3"
+                }
+            ], 
+            "id": "e545b35f-552b-4f7c-b005-f4925f961752", 
+            "mac_address": "fa:16:3e:ba:01:7c", 
+            "name": "", 
+            "network_id": "9e875ef4-cdfa-4bae-9a9a-a5c6dfe7762f", 
+            "security_groups": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93", 
+            "updated_at": "2017-04-24T15:37:12"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "cloud", 
+            "binding:profile": {}, 
+            "binding:vif_details": {
+                "ovs_hybrid_plug": true, 
+                "port_filter": true
+            }, 
+            "binding:vif_type": "ovs", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-03-02T16:45:37", 
+            "description": "", 
+            "device_id": "ea57f133-cccd-4347-91f0-8f95fe05b88e", 
+            "device_owner": "compute:nova", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.0.0.48", 
+                    "subnet_id": "0419a51b-9df5-4f36-9467-e06b96e04d50"
+                }
+            ], 
+            "id": "e6a3916f-0fae-451a-8915-0e4ac7c7c821", 
+            "mac_address": "fa:16:3e:ff:37:31", 
+            "name": "", 
+            "network_id": "30c0b004-a0d5-4bac-a152-973e720f3cb4", 
+            "security_groups": [
+                "e29b628b-1ee7-4f15-866c-b38e9b2e9853"
+            ], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc", 
+            "updated_at": "2017-04-24T15:37:13"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2016-12-27T21:54:48", 
+            "description": "", 
+            "device_id": "53019ede-c898-4911-9435-b98a03ba9cb8", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.3", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "eaade98d-65fe-4214-bea9-a5acb3dc9ec5", 
+            "mac_address": "fa:16:3e:3d:1b:5f", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2016-12-27T21:54:48"
+        }, 
+        {
+            "admin_state_up": true, 
+            "allowed_address_pairs": [], 
+            "binding:host_id": "", 
+            "binding:profile": {}, 
+            "binding:vif_details": {}, 
+            "binding:vif_type": "unbound", 
+            "binding:vnic_type": "normal", 
+            "created_at": "2017-02-01T17:05:08", 
+            "description": "", 
+            "device_id": "7aacc7b4-2df5-47cc-9b04-4648090848b0", 
+            "device_owner": "network:floatingip", 
+            "extra_dhcp_opts": [], 
+            "fixed_ips": [
+                {
+                    "ip_address": "192.168.10.18", 
+                    "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                }
+            ], 
+            "id": "f0b197ec-cc14-44f5-84ff-f199ce480244", 
+            "mac_address": "fa:16:3e:4b:42:ab", 
+            "name": "", 
+            "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c", 
+            "security_groups": [], 
+            "status": "N/A", 
+            "tenant_id": "", 
+            "updated_at": "2017-02-01T17:05:08"
+        }
+    ]
+}
+
+TASK [show facts about all servers] ********************************************
+task path: /etc/ansible/playbooks/port1.yaml:36
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/cloud/openstack/os_server_facts.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987 `" && echo ansible-tmp-1494007923.74-248397783048987="` echo /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmpGN9tVH TO /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987/os_server_facts.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987/ /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987/os_server_facts.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987/os_server_facts.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007923.74-248397783048987/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238] => {
+    "ansible_facts": {
+        "openstack_servers": [
+            {
+                "HUMAN_ID": true, 
+                "NAME_ATTR": "name", 
+                "OS-DCF:diskConfig": "AUTO", 
+                "OS-EXT-AZ:availability_zone": "nova", 
+                "OS-EXT-SRV-ATTR:host": "cloud", 
+                "OS-EXT-SRV-ATTR:hypervisor_hostname": "cloud", 
+                "OS-EXT-SRV-ATTR:instance_name": "instance-00000038", 
+                "OS-EXT-STS:power_state": 4, 
+                "OS-EXT-STS:task_state": null, 
+                "OS-EXT-STS:vm_state": "stopped", 
+                "OS-SRV-USG:launched_at": "2017-02-11T22:22:41.000000", 
+                "OS-SRV-USG:terminated_at": null, 
+                "accessIPv4": "", 
+                "accessIPv6": "", 
+                "addresses": {
+                    "private-net": [
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:44:4a:be", 
+                            "OS-EXT-IPS:type": "fixed", 
+                            "addr": "10.0.0.17", 
+                            "version": 4
+                        }, 
+                        {
+                            "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:44:4a:be", 
+                            "OS-EXT-IPS:type": "floating", 
+                            "addr": "192.168.10.3", 
+                            "version": 4
+                        }
+                    ]
+                }, 
+                "az": "nova", 
+                "cloud": "defaults", 
+                "config_drive": "", 
+                "created": "2017-02-11T22:22:34Z", 
+                "flavor": {
+                    "id": "4"
+                }, 
+                "hostId": "6eee6e3b21e69b46e750a98ee03bed6f8528eab4fc4fc9cda391a1cf", 
+                "human_id": "ubuntu", 
+                "id": "77c49c4c-7f44-4d42-a97c-269dd6d14efb", 
+                "image": {
+                    "id": "3ab4608c-dc6c-483e-9f59-7c5867e6e8d6"
+                }, 
+                "key_name": "test", 
+                "metadata": {}, 
+                "name": "ubuntu", 
+                "networks": {
+                    "private-net": [
+                        "10.0.0.17", 
+                        "192.168.10.3"
+                    ]
+                }, 
+                "os-extended-volumes:volumes_attached": [], 
+                "region": "", 
+                "request_ids": [], 
+                "security_groups": [
+                    {
+                        "name": "default"
+                    }
+                ], 
+                "status": "SHUTOFF", 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+                "updated": "2017-03-28T11:23:15Z", 
+                "user_id": "1eced9a2bc834cdc92cdc9d0bff5051e", 
+                "volumes": [], 
+                "x_openstack_request_ids": []
+            }
+        ]
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_timeout": null, 
+            "auth": {
+                "auth_url": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "project_name": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "auth_type": null, 
+            "availability_zone": null, 
+            "cacert": null, 
+            "cert": null, 
+            "cloud": null, 
+            "detailed": null, 
+            "endpoint_type": "public", 
+            "key": null, 
+            "region_name": null, 
+            "server": null, 
+            "timeout": 180, 
+            "verify": null, 
+            "wait": true
+        }
+    }
+}
+
+TASK [show openstack servers] **************************************************
+task path: /etc/ansible/playbooks/port1.yaml:43
+ok: [192.168.10.238] => {
+    "changed": false, 
+    "openstack_servers": [
+        {
+            "HUMAN_ID": true, 
+            "NAME_ATTR": "name", 
+            "OS-DCF:diskConfig": "AUTO", 
+            "OS-EXT-AZ:availability_zone": "nova", 
+            "OS-EXT-SRV-ATTR:host": "cloud", 
+            "OS-EXT-SRV-ATTR:hypervisor_hostname": "cloud", 
+            "OS-EXT-SRV-ATTR:instance_name": "instance-00000038", 
+            "OS-EXT-STS:power_state": 4, 
+            "OS-EXT-STS:task_state": null, 
+            "OS-EXT-STS:vm_state": "stopped", 
+            "OS-SRV-USG:launched_at": "2017-02-11T22:22:41.000000", 
+            "OS-SRV-USG:terminated_at": null, 
+            "accessIPv4": "", 
+            "accessIPv6": "", 
+            "addresses": {
+                "private-net": [
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:44:4a:be", 
+                        "OS-EXT-IPS:type": "fixed", 
+                        "addr": "10.0.0.17", 
+                        "version": 4
+                    }, 
+                    {
+                        "OS-EXT-IPS-MAC:mac_addr": "fa:16:3e:44:4a:be", 
+                        "OS-EXT-IPS:type": "floating", 
+                        "addr": "192.168.10.3", 
+                        "version": 4
+                    }
+                ]
+            }, 
+            "az": "nova", 
+            "cloud": "defaults", 
+            "config_drive": "", 
+            "created": "2017-02-11T22:22:34Z", 
+            "flavor": {
+                "id": "4"
+            }, 
+            "hostId": "6eee6e3b21e69b46e750a98ee03bed6f8528eab4fc4fc9cda391a1cf", 
+            "human_id": "ubuntu", 
+            "id": "77c49c4c-7f44-4d42-a97c-269dd6d14efb", 
+            "image": {
+                "id": "3ab4608c-dc6c-483e-9f59-7c5867e6e8d6"
+            }, 
+            "key_name": "test", 
+            "metadata": {}, 
+            "name": "ubuntu", 
+            "networks": {
+                "private-net": [
+                    "10.0.0.17", 
+                    "192.168.10.3"
+                ]
+            }, 
+            "os-extended-volumes:volumes_attached": [], 
+            "region": "", 
+            "request_ids": [], 
+            "security_groups": [
+                {
+                    "name": "default"
+                }
+            ], 
+            "status": "SHUTOFF", 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491", 
+            "updated": "2017-03-28T11:23:15Z", 
+            "user_id": "1eced9a2bc834cdc92cdc9d0bff5051e", 
+            "volumes": [], 
+            "x_openstack_request_ids": []
+        }
+    ]
+}
+
+TASK [show facts about all routers] ********************************************
+task path: /etc/ansible/playbooks/port1.yaml:46
+Using module file /usr/lib/python2.7/dist-packages/ansible/modules/cloud/openstack/os_router_facts.py
+<192.168.10.238> ESTABLISH LOCAL CONNECTION FOR USER: root
+<192.168.10.238> EXEC /bin/sh -c 'echo ~ && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811 `" && echo ansible-tmp-1494007925.25-228796497809811="` echo /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811 `" ) && sleep 0'
+<192.168.10.238> PUT /tmp/tmph7i18v TO /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811/os_router_facts.py
+<192.168.10.238> EXEC /bin/sh -c 'chmod u+x /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811/ /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811/os_router_facts.py && sleep 0'
+<192.168.10.238> EXEC /bin/sh -c '/usr/bin/python /root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811/os_router_facts.py; rm -rf "/root/.ansible/tmp/ansible-tmp-1494007925.25-228796497809811/" > /dev/null 2>&1 && sleep 0'
+ok: [192.168.10.238] => {
+    "ansible_facts": {
+        "openstack_routers": [
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "description": "", 
+                "distributed": false, 
+                "external_gateway_info": {
+                    "enable_snat": true, 
+                    "external_fixed_ips": [
+                        {
+                            "ip_address": "192.168.10.17", 
+                            "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                        }
+                    ], 
+                    "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+                }, 
+                "ha": false, 
+                "id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+                "name": "test", 
+                "routes": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "description": "", 
+                "distributed": false, 
+                "external_gateway_info": {
+                    "enable_snat": true, 
+                    "external_fixed_ips": [
+                        {
+                            "ip_address": "192.168.10.4", 
+                            "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                        }
+                    ], 
+                    "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+                }, 
+                "ha": false, 
+                "id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+                "name": "router-ceph", 
+                "routes": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc"
+            }, 
+            {
+                "admin_state_up": true, 
+                "availability_zone_hints": [], 
+                "availability_zones": [
+                    "nova"
+                ], 
+                "description": "", 
+                "distributed": false, 
+                "external_gateway_info": {
+                    "enable_snat": true, 
+                    "external_fixed_ips": [
+                        {
+                            "ip_address": "192.168.10.2", 
+                            "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                        }
+                    ], 
+                    "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+                }, 
+                "ha": false, 
+                "id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+                "name": "router", 
+                "routes": [], 
+                "status": "ACTIVE", 
+                "tenant_id": "2769150ba56845529b93a4ce5720e491"
+            }
+        ]
+    }, 
+    "changed": false, 
+    "invocation": {
+        "module_args": {
+            "api_timeout": null, 
+            "auth": {
+                "auth_url": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "password": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "project_name": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER", 
+                "username": "VALUE_SPECIFIED_IN_NO_LOG_PARAMETER"
+            }, 
+            "auth_type": null, 
+            "availability_zone": null, 
+            "cacert": null, 
+            "cert": null, 
+            "cloud": null, 
+            "endpoint_type": "public", 
+            "filters": null, 
+            "key": null, 
+            "name": null, 
+            "region_name": null, 
+            "timeout": 180, 
+            "verify": null, 
+            "wait": true
+        }
+    }
+}
+
+TASK [show openstack routers] **************************************************
+task path: /etc/ansible/playbooks/port1.yaml:53
+ok: [192.168.10.238] => {
+    "changed": false, 
+    "openstack_routers": [
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "description": "", 
+            "distributed": false, 
+            "external_gateway_info": {
+                "enable_snat": true, 
+                "external_fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.17", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+            }, 
+            "ha": false, 
+            "id": "3ec2ed0f-6b3c-4b68-874d-68e5ab09afa4", 
+            "name": "test", 
+            "routes": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "57aa7ddb95f84cf8b78a41eedd600d93"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "description": "", 
+            "distributed": false, 
+            "external_gateway_info": {
+                "enable_snat": true, 
+                "external_fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.4", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+            }, 
+            "ha": false, 
+            "id": "3ef941c4-265f-4b2a-8c73-a46843cdf807", 
+            "name": "router-ceph", 
+            "routes": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "fdf5f641ddb046f29a0542b045b3e9cc"
+        }, 
+        {
+            "admin_state_up": true, 
+            "availability_zone_hints": [], 
+            "availability_zones": [
+                "nova"
+            ], 
+            "description": "", 
+            "distributed": false, 
+            "external_gateway_info": {
+                "enable_snat": true, 
+                "external_fixed_ips": [
+                    {
+                        "ip_address": "192.168.10.2", 
+                        "subnet_id": "9dc294a4-1b46-43a2-b5d4-1cfeac833539"
+                    }
+                ], 
+                "network_id": "b36c3ed8-2597-49a2-96fe-9a1f57300c2c"
+            }, 
+            "ha": false, 
+            "id": "e905d72a-2b38-4c34-a125-8364618096d6", 
+            "name": "router", 
+            "routes": [], 
+            "status": "ACTIVE", 
+            "tenant_id": "2769150ba56845529b93a4ce5720e491"
+        }
+    ]
+}
+META: ran handlers
+META: ran handlers
+
+PLAY RECAP *********************************************************************
+192.168.10.238             : ok=11   changed=0    unreachable=0    failed=0   
+

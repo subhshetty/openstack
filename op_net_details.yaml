@@ -1,0 +1,55 @@
+---
+- hosts: 192.168.10.238
+  connection: local
+  become: yes
+  tasks:
+  - name: Gather facts about previously created networks
+    os_networks_facts:
+      auth:
+        auth_url: http://192.168.10.238:5000/v2.0
+        username: admin
+        password: cnetopenstack
+        project_name: kube
+  - name: Show openstack networks
+    debug:
+      var: openstack_networks
+  - name: Gather facts about previously created subnets
+    os_subnets_facts:
+      auth:
+        auth_url: http://192.168.10.238:5000/v2.0
+        username: admin
+        password: cnetopenstack
+        project_name: admin
+  - name: Show openstack subnets
+    debug:
+      var: openstack_subnets
+  - name: show facts about all ports
+    os_port_facts:
+      auth:
+        auth_url: http://192.168.10.238:5000/v2.0
+        username: admin
+        password: cnetopenstack
+        project_name: admin
+  - name: show openstack ports
+    debug:
+      var: openstack_ports
+  - name: show facts about all servers
+    os_server_facts:
+      auth:
+        auth_url: http://192.168.10.238:5000/v2.0
+        username: admin
+        password: cnetopenstack
+        project_name: admin
+  - name: show openstack servers
+    debug:
+      var: openstack_servers
+  - name: show facts about all routers
+    os_router_facts:
+      auth:
+        auth_url: http://192.168.10.238:5000/v2.0
+        username: admin
+        password: cnetopenstack
+        project_name: admin
+  - name: show openstack routers
+    debug:
+      var: openstack_routers
